@@ -16,9 +16,11 @@ class RegisterEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($name)
     {
         //
+        $this->name = $name;
+
     }
 
     /**
@@ -28,6 +30,8 @@ class RegisterEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('Mail.registerMail');
+        return $this->view('Mail.registerMail',[
+            'nome' =>$this->name
+        ]);
     }
 }
