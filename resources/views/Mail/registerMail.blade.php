@@ -9,7 +9,7 @@
     <body>
         <div style="dispaly: flex; justify-content: center">
             <h1 style="color:red;"> SEJA BEM VINDO, {{$NOME}}</h1>
-            <h1></h1>
+            <h1>THIS IA AN E-MAIL</h1>
         </div>
     </body>
 </html>
