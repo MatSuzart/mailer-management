@@ -34,7 +34,7 @@ class RegisterEmail extends Mailable
     {
         return $this->view('Mail.registerMail',[
             'nome' =>$this->user->name
-        ])->attach('C:/',[
+        ])->attach('C:/',[ 
             'as'=>'imag.png'
         ]);//_DIR_'/../../public/anexo.pgn
     }

@@ -3,7 +3,7 @@
         <meta charset="en">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
         <meta http-esquiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <title>MAIL</title>
         <meta name="description" content="E-MAIL DESCRIPTION">
     </head>
     <body>
