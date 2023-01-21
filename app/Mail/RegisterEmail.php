@@ -21,6 +21,11 @@ class RegisterEmail extends Mailable
     public function __construct(User $random)
     {
         //
+
+        $this->subject('ASSUNTO');
+        $this->from('mathsuzart@outlook.com');
+        $this->replyTo('noreply@outlook.com');
+        
         $this->name = $random;
 
     }
@@ -33,9 +38,6 @@ class RegisterEmail extends Mailable
     public function build()
     {
 
-        $this->subject('ASSUNTO');
-        $this->from('mathsuzart@outlook.com');
-        $this->replyTo('noreply@outlook.com');
 
         return $this->view('Mail.registerMail',[
             'nome' =>$this->user->name
