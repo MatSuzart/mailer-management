@@ -10,6 +10,9 @@ class AuthMailController extends Controller
     public function sendMail(){
         $user  = new User();
         $user->name = 'MATHEUS SUZART';
+        $user->password ='123';
+        $user->email ='teste@teste.com';
+
 
         $registerEmail = new RegisterEmail($user);
 
@@ -18,7 +21,7 @@ class AuthMailController extends Controller
         Mail::to('mathsuzart@outlook.com')->send($registerEmail)
         ->cc('email@gmail.com')
         ->bcc('email12@gmail.com')
-        ->send($registerEmail);
+        ->queue($registerEmail);
 
 
     }
