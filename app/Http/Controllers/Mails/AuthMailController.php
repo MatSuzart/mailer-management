@@ -13,6 +13,8 @@ class AuthMailController extends Controller
         $user->password ='123';
         $user->email ='teste@teste.com';
 
+        $user->save();
+
 
         $registerEmail = new RegisterEmail($user);
 
