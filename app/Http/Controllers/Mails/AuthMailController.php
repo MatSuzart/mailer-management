@@ -16,6 +16,9 @@ class AuthMailController extends Controller
         $user->save();
 
 
+        SendAuthMail::dispatch($user);
+
+        /*
         $registerEmail = new RegisterEmail($user);
 
         return $registerEmail;
@@ -25,6 +28,6 @@ class AuthMailController extends Controller
         ->bcc('email12@gmail.com')
         ->queue($registerEmail);
 
-
+        */
     }
 }

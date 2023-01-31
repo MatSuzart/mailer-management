@@ -12,14 +12,18 @@ class SendAuthMail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+
+    private $user;
+
+
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user)
     {
-        //
+        $this->$user = $user;
     }
 
     /**
@@ -29,6 +33,13 @@ class SendAuthMail implements ShouldQueue
      */
     public function handle()
     {
-        //
+        $registerEmail = new RegisterEmail($this->$user);
+
+        return $registerEmail;
+
+        Mail::to('mathsuzart@outlook.com')->send($registerEmail)
+        ->cc('email@gmail.com')
+        ->bcc('email12@gmail.com')
+        ->send($registerEmail);
     }
 }
